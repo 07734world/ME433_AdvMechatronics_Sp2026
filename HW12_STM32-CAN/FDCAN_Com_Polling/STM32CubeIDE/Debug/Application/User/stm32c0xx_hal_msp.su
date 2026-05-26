@@ -1,0 +1,3 @@
+C:/Users/Mech2.71828/Desktop/ME433_AdvMechatronics/GitHub/ME433_AdvMechatronics_Sp2026/HW12_STM32-CAN/FDCAN_Com_Polling/Src/stm32c0xx_hal_msp.c:62:6:HAL_MspInit	16	static
+C:/Users/Mech2.71828/Desktop/ME433_AdvMechatronics/GitHub/ME433_AdvMechatronics_Sp2026/HW12_STM32-CAN/FDCAN_Com_Polling/Src/stm32c0xx_hal_msp.c:85:6:HAL_FDCAN_MspInit	88	static
+C:/Users/Mech2.71828/Desktop/ME433_AdvMechatronics/GitHub/ME433_AdvMechatronics_Sp2026/HW12_STM32-CAN/FDCAN_Com_Polling/Src/stm32c0xx_hal_msp.c:133:6:HAL_FDCAN_MspDeInit	16	static

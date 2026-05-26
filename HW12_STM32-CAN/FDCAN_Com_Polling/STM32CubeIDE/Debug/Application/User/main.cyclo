@@ -1,0 +1,7 @@
+C:/Users/Mech2.71828/Desktop/ME433_AdvMechatronics/GitHub/ME433_AdvMechatronics_Sp2026/HW12_STM32-CAN/FDCAN_Com_Polling/Src/main.c:79:5:main	13
+C:/Users/Mech2.71828/Desktop/ME433_AdvMechatronics/GitHub/ME433_AdvMechatronics_Sp2026/HW12_STM32-CAN/FDCAN_Com_Polling/Src/main.c:232:6:SystemClock_Config	3
+C:/Users/Mech2.71828/Desktop/ME433_AdvMechatronics/GitHub/ME433_AdvMechatronics_Sp2026/HW12_STM32-CAN/FDCAN_Com_Polling/Src/main.c:271:13:MX_FDCAN1_Init	2
+C:/Users/Mech2.71828/Desktop/ME433_AdvMechatronics/GitHub/ME433_AdvMechatronics_Sp2026/HW12_STM32-CAN/FDCAN_Com_Polling/Src/main.c:314:13:MX_GPIO_Init	1
+C:/Users/Mech2.71828/Desktop/ME433_AdvMechatronics/GitHub/ME433_AdvMechatronics_Sp2026/HW12_STM32-CAN/FDCAN_Com_Polling/Src/main.c:333:6:BSP_PB_Callback	3
+C:/Users/Mech2.71828/Desktop/ME433_AdvMechatronics/GitHub/ME433_AdvMechatronics_Sp2026/HW12_STM32-CAN/FDCAN_Com_Polling/Src/main.c:359:17:BufferCmp8b	3
+C:/Users/Mech2.71828/Desktop/ME433_AdvMechatronics/GitHub/ME433_AdvMechatronics_Sp2026/HW12_STM32-CAN/FDCAN_Com_Polling/Src/main.c:379:6:Error_Handler	1

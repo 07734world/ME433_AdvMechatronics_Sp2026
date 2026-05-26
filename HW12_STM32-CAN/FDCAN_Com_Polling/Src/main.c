@@ -23,7 +23,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -33,8 +33,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define TX_ID          (0x111)   /* TX CAN message identifier    */
-#define RX_ID          (0x111)   /* RX CAN message identifier    */
+#define TX_ID          (0x100)   /* TX CAN message identifier    */
+#define RX_ID          (0x100)   /* RX CAN message identifier    */
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -52,8 +52,8 @@ FDCAN_HandleTypeDef hfdcan1;
 FDCAN_RxHeaderTypeDef rxHeader;
 FDCAN_TxHeaderTypeDef txHeader;
 uint8_t rxData[16U];
-static const uint8_t txData[] = {0x10, 0x32, 0x54, 0x76, 0x98, 0x00, 0x11, 0x22,
-                                 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0x00
+static const uint8_t txData[] = {0xFA, 0xBC, 0x86, 0x75, 0x30, 0x9E, 0xE9, 0x99,
+                                 0x31, 0x42, 0x00, 0xBB, 0xAF, 0xCA, 0xB9, 0x11
                                 };
 
 /* USER CODE END PV */
@@ -197,6 +197,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+
     /* Polling mode: Wait for one message received */
     while (HAL_FDCAN_GetRxFifoFillLevel(&hfdcan1, FDCAN_RX_FIFO0) < 1U)
     {
@@ -210,13 +211,24 @@ int main(void)
     }
 
     /* Compare received RX message to expected data. Ignore if not matching. */
-    if ((rxHeader.Identifier == RX_ID) &&
+   /* if ((rxHeader.Identifier == RX_ID) &&
         (rxHeader.IdType     == FDCAN_STANDARD_ID) &&
         (rxHeader.DataLength == FDCAN_DLC_BYTES_16) &&
-        (BufferCmp8b(txData, rxData, COUNTOF(rxData)) == 0U))
+        (BufferCmp8b(txData, rxData, COUNTOF(rxData)) == 0U))*/
+
+    if ((rxHeader.Identifier == RX_ID)&&
+		(rxHeader.IdType     == FDCAN_STANDARD_ID) &&
+		(rxHeader.DataLength == FDCAN_DLC_BYTES_16))
     {
       /* Turn LED1 on */
       BSP_LED_On(LED1);
+      printf("LED ON\r\n");
+
+      HAL_FDCAN_GetRxMessage(&hfdcan1, FDCAN_RX_FIFO0, &rxHeader, rxData);
+      for(int i=0; i<=15; i++){
+    	  printf("rxData_%.2d: 0x%.2X\r\n", i , rxData[i]);
+      }
+
     }
     /* USER CODE END WHILE */
 
@@ -336,6 +348,7 @@ void BSP_PB_Callback(Button_TypeDef Button)
   {
     /* Turn LED1 off */
     BSP_LED_Off(LED1);
+    printf("LED OFF\r\n");
 
     /* Add message to TX FIFO */
     if (HAL_FDCAN_AddMessageToTxFifoQ(&hfdcan1, &txHeader, txData) != HAL_OK)

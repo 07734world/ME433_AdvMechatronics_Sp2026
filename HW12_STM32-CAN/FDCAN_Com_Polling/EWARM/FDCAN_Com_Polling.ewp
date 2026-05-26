@@ -212,6 +212,7 @@
           <name>CCDefines</name>
           <state>USE_HAL_DRIVER</state>
           <state>STM32C092xx</state>
+          <state>USE_NUCLEO_64</state>
           <state></state>
         </option>
         <option>
@@ -1153,10 +1154,16 @@
         <name>$PROJ_DIR$/../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_fdcan.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.c</name>
+        <name>$PROJ_DIR$/../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_usart.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.c</name>
+        <name>$PROJ_DIR$/../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_usart_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$/../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$/../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.c</name>
       </file>
     </group>
     <group>
